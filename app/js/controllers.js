@@ -2,10 +2,12 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+cssGen.controller( 'itemsController', function($scope){
+  
+  $scope.css-snippet = [
+    { "name" : "body",
+      "snippet" : { "background" : "red" } },
+    { "name" : "div",
+      "snippet" : {"padding" : "10px" } }
+  ];
+});  

@@ -1,19 +1,23 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="cssGen">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>My AngularJS CSS Generation App</title>
   <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+<body ng-controller="cssApp">
+  
+  <label for="items">CSS</label>
+  <input type="text" ng-model="css" id="items" />
+  
+  <p>{{css}}</p>
+  
+  <ul>
+    <li ng-repeat="item in items">
+      {{item.name}}
+      <p>{{item.snippet}}</p>
+    </li>
   </ul>
-
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
@@ -24,5 +28,7 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="js/angularfire.js"></script>
 </body>
 </html>
